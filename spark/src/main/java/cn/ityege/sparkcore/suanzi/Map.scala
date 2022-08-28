@@ -9,7 +9,7 @@ object Map {
     val sparkContext: SparkContext = new SparkContext(sparkConf)
     sparkContext.setLogLevel("ERROR")
     val src: RDD[String] = sparkContext.parallelize(List("bit", "linc", "xwc", "fjg", "wc", "spark"), 3)
-    //
+    // map输入一个元素，输出一个元素。
     val map: RDD[Int] = src.map(word => word.length)
     val zip: RDD[(String, Int)] = src.zip(map)
     val collect: Array[(String, Int)] = zip.collect()

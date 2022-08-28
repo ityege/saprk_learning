@@ -9,9 +9,9 @@ object MapPartitions {
     val sparkContext: SparkContext = new SparkContext(sparkConf)
     sparkContext.setLogLevel("ERROR")
     val src: RDD[Int] = sparkContext.parallelize(1 to 9, 3)
-    val collect: Array[(Int, Int)] = src.mapPartitions(myfunc).collect()
+    //mapPartitions输入一个分区元素，元素组成迭代器，输出多个元素，组成迭代器
+    val collect: Array[String] = src.mapPartitions(myfunc1).collect()
     println(collect.mkString(","))
-
   }
 
   //
@@ -26,4 +26,7 @@ object MapPartitions {
     res.iterator
   }
 
+  def myfunc1[T](iter: Iterator[T]):  Iterator[String]  = {
+     List("a","b","c").iterator
+  }
 }
