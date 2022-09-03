@@ -1,4 +1,4 @@
-package cn.ityege.sparkcore.suanzi
+package cn.ityege.sparkcore.suanzi.trasnformation
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}

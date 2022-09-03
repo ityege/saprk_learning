@@ -1,4 +1,4 @@
-package cn.ityege.sparkcore.suanzi
+package cn.ityege.sparkcore.suanzi.trasnformation
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
@@ -26,7 +26,7 @@ object MapPartitions {
     res.iterator
   }
 
-  def myfunc1[T](iter: Iterator[T]):  Iterator[String]  = {
-     List("a","b","c").iterator
+  def myfunc1[T](iter: Iterator[T]): Iterator[String] = {
+    List("a", "b", "c").iterator
   }
 }
